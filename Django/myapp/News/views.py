@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.shortcuts import HttpResponse
 from .models import News
 from .forms import registroform
+from .models import Dataregistro
+
 
 def home(resquest):
 	context = {
@@ -39,5 +41,17 @@ def registro(resquest):
 
 	}
 	return render(resquest, "registro.html", context)
+
+def addUser(request):
+	form = registroform(request.POST)
+	if form.is_valid():
+		registro = Dataregistro(username=form.cleaned_data['username'],
+								password=form.cleaned_data['password'],
+								email=form.cleaned_data['email']
+								)
+
+		registro.save()
+
+		return redirect('/home')
 
 
