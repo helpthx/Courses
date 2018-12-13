@@ -6,25 +6,43 @@
 
 <h1>REGISTRO</h1>
 <div class="container">
+    {%if messages %}
+
+    <ul class="messages">
+        {%for msg in messages %}
+        <li>
+            <div class="alert alter-{{msg.level_tag}}" role="alert">
+            {{msg.message}}
+            </div>
+        </li>
+
+        {% endfor %}
+    </ul>
+
+    {%endif%}
 
 
 <p>FORMULARIO DE CADASTROS</p>
 <form action="{% url 'addUser' %}" method="post">
     {% csrf_token %}
     <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <label ><b>Username:</b></label>
+        {{form.username}}
+    </div>
+     <div class="form-group">
+    <label >Password:</label>
+        {{form.password}}
+  </div>
+
+
+    <div class="form-group">
+    <label>Email:</label>
+         {{form.email}}
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+
+
+  <button type="submit" class="btn btn-primary">Cadastrar</button>
 
 
 </form>

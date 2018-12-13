@@ -3,6 +3,7 @@ from django.shortcuts import HttpResponse
 from .models import News
 from .forms import registroform
 from .models import Dataregistro
+from django.contrib import messages
 
 
 def home(resquest):
@@ -51,7 +52,8 @@ def addUser(request):
 								)
 
 		registro.save()
+		messages.add_message(request, messages.SUCCESS, "CADASTRO REALIZADO COM SUCESSO !")
 
-		return redirect('/home')
+		return redirect('/registro')
 
 
