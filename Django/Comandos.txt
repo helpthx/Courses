@@ -7,6 +7,7 @@ Comandos
 * # runserver -- Iniciar o servidor
 * # makemigrations -- Migrar do models para o phpmyadmin usando mysql.
 * # migrate -- cria as tabelas e migra para o mysql 
+* # createsuperuser -- Criar superusuario
 
 Models -- criar e migrar os bancos de dados... (Toda vez que mecher no Models tem que fazer o makemigrations  eo migrate) 
 Url -- fazer a url de cada pagina separada

@@ -24,9 +24,14 @@ class SportNews(models.Model):
 
 
 class Dataregistro(models.Model):
-	username = models.CharField(max_length=100)
-	password = models.CharField(max_length=100)
-	email = models.CharField(max_length=100)
+	Username = models.CharField(max_length=100)
+	Password = models.CharField(max_length=100)
+	FistName = models.CharField(max_length=100)
+	LastName = models.CharField(max_length=100)
+	Country = models.CharField(max_length=100)
+	State = models.CharField(max_length=100)
+	Zip = models.CharField(max_length=100)
+	Email = models.CharField(max_length=100)
 
 	def __str__(self):
 		return self.username

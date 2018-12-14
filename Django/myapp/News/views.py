@@ -15,8 +15,9 @@ def home(resquest):
 	return render(resquest, "home.html", context)
 
 def contatos(resquest):
+	obj = Dataregistro.objects.get(id=1)
 	context = {
-		"text": "Variavel@live.com"
+		"text": obj
 	}
 	return render(resquest, "contato.html", context)
 
@@ -46,14 +47,18 @@ def registro(resquest):
 def addUser(request):
 	form = registroform(request.POST)
 	if form.is_valid():
-		registro = Dataregistro(username=form.cleaned_data['username'],
-								password=form.cleaned_data['password'],
-								email=form.cleaned_data['email']
+		registro = Dataregistro(Username=form.cleaned_data['username'],
+								Password=form.cleaned_data['Password'],
+								FistName=form.cleaned_data['FistName'],
+								LastName=form.cleaned_data['LastName'],
+								Country=form.cleaned_data['Country'],
+								State=form.cleaned_data['State'],
+								Zip=form.cleaned_data['Zip'],
+								Email=form.cleaned_data['email']
 								)
 
 		registro.save()
 		messages.add_message(request, messages.SUCCESS, "CADASTRO REALIZADO COM SUCESSO !")
-
-		return redirect('/registro')
+		return redirect('addUser')
 
 

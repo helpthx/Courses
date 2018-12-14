@@ -6,10 +6,17 @@
     <title>{%block title %} {%endblock%}</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}"/>
+    <link href="grid.css" rel="stylesheet">
 </head>
 <body>
 {% include 'navbar.html' %}
-
+<div class="jumbotron">
+        <div class="container ">
+          <h1 class="display-4">Hello, Djando + Bootstrap + MySQL!</h1>
+          <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+          <p><a class="btn btn btn-dark" href="https://github.com/helpthx/Courses/tree/master/Django" role="button">Go to GitHub&raquo;</a></p>
+        </div>
+      </div>
 {%block content %} {%endblock%}
 </body>
 </html>

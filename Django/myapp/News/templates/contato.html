@@ -3,9 +3,15 @@
 {%block title %}CONTATOS{%endblock%}
 
 {%block content %}
-Contanto,
-Testando o block2
 
-{{text}}
+<div class="container">
+<h2>Data provaide for MySQL database</h2>
+      <p >Get three equal-width columns <strong>starting at desktops and scaling to large desktops</strong>. On mobile devices, tablets and below, the columns will automatically stack.</p>
+      <div class="row">
+        <div class="col-md-4">{{text.username}}</div>
+        <div class="col-md-4">{{text.password}}</div>
+        <div class="col-md-4">{{text.email}}</div>
+      </div>
 
+</div>
 {% endblock %}

@@ -45,13 +45,20 @@ pip 9.0.1
 * Install django last stable version
 * Install and run MySQL
 * Create a database call "django2"
+* Set the rigth password and ports on settings.py
+* On manage.py ru
+
+```
+$ python3 manage.py makemigration
+$ python3 manage.py migrate
+```
 
 
 ## Running the tests
 
 * Run
 ```
-$ python3 manage.py migrate && python3 manage.py migration
+$ python3 manage.py migrate && python3 manage.py makemigration
 ```
 * Make sure that there are tables from django admin and aplications.
 * On /myapp dir run 

@@ -4,16 +4,26 @@
 
 {%block content %}
 
-NOVIDADES ANUAL
 
-{% for News in arquivo_list %}
 
-<h1>{{News.author}}</h1>
-<h2>{{News.title}}</h2>
-<p>{{News.description}}</p>
-<p>{{News.pub_date}}</p>
+<div class="container">
+<h2>Data provaide for MySQL database</h2>
+      <p >List format, use year/2018, year/2017 to consult the database</p>
+      <div class="row">
+        <div class="col-sm"><b>Author</b></div>
+        <div class="col-sm"><b>Title</b></div>
+          <div class="col-sm"><b>Publication date</b></div>
+      </div>
+        {% for News in arquivo_list %}
+      <div class="row alert-dark">
+        <div class="col-sm ">{{News.author}}</div>
+        <div class="col-sm">{{News.title}}</div>
+        <div class="col-sm">{{News.pub_date}}</div>
+      </div>
+        {% endfor %}
+</div>
 
-{% endfor %}
+
 
 
 {% endblock %}

@@ -4,49 +4,118 @@
 
 {%block content %}
 
-<h1>REGISTRO</h1>
 <div class="container">
-    {%if messages %}
-
-    <ul class="messages">
-        {%for msg in messages %}
-        <li>
-            <div class="alert alter-{{msg.level_tag}}" role="alert">
-            {{msg.message}}
+          <h1 class="display-4">Enrollment form</h1>
+           <form action="{% url 'registro' %}" method="post">
+             {% csrf_token %}
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label >First name</label>
+                {{form.FistName}}
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label>Last name</label>
+                {{form.LastName}}
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
             </div>
-        </li>
 
-        {% endfor %}
-    </ul>
+            <div class="mb-3">
+              <label>Username</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">@</span>
+                </div>
+                {{form.Username}}
+                <div class="invalid-feedback" style="width: 100%;">
+                  Your username is required.
+                </div>
+              </div>
+            </div>
 
-    {%endif%}
+            <div class="mb-3">
+              <label>Email <span class="text-muted">(Optional)</span></label>
+              {{form.Email}}
+              <div class="invalid-feedback">
+                Please enter a valid email address for shipping updates.
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-5 mb-3">
+                <label>Country</label>
+                {{form.Country}}
+                <div class="invalid-feedback">
+                  Please select a valid country.
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label>State</label>
+                {{form.State}}
+                <div class="invalid-feedback">
+                  Please provide a valid state.
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Zip</label>
+                {{form.Zip}}
+                <div class="invalid-feedback">
+                  Zip code required.
+                </div>
+              </div>
+            </div>
+   <button type="submit" class="btn btn btn-dark">SEND</button>
+           </form>
 
 
-<p>FORMULARIO DE CADASTROS</p>
-<form action="{% url 'addUser' %}" method="post">
-    {% csrf_token %}
-    <div class="form-group">
-    <label ><b>Username:</b></label>
-        {{form.username}}
-    </div>
-     <div class="form-group">
-    <label >Password:</label>
-        {{form.password}}
-  </div>
-
-
-    <div class="form-group">
-    <label>Email:</label>
-         {{form.email}}
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-
-
-  <button type="submit" class="btn btn-primary">Cadastrar</button>
-
-
-</form>
 </div>
+
+
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2017-2018 Helpthx</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Privacy</a></li>
+          <li class="list-inline-item"><a href="#">Terms</a></li>
+          <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+      </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
 
 {% endblock %}
 
