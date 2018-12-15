@@ -8,6 +8,9 @@ Comandos
 * # makemigrations -- Migrar do models para o phpmyadmin usando mysql.
 * # migrate -- cria as tabelas e migra para o mysql 
 * # createsuperuser -- Criar superusuario
+django-admin startproject "Nome do projeto"
+* # startapp "Nome do diretório" -- cria um dir da aplicação 
+
 
 Models -- criar e migrar os bancos de dados... (Toda vez que mecher no Models tem que fazer o makemigrations  eo migrate) 
 Url -- fazer a url de cada pagina separada
