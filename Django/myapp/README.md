@@ -1,5 +1,5 @@
 
-# FaceRecognition
+# Djando + MySQL + BootStrap
 
 <p align="center">
  
@@ -14,9 +14,6 @@
         
 <a href="Python" alt="">
        <img src="https://img.shields.io/pypi/pyversions/Django.svg" /></a>
-
-<a href="Django" alt="">
-       <img src="https://img.shields.io/pypi/djversions/:packageName.svg" /></a>
 
   
 <a href="Size" alt="">
