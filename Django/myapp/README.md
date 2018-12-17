@@ -3,20 +3,20 @@
 
 <p align="center">
  
-<a href="Tempo" alt="">
+<a href="" alt="">
         <img src="https://img.shields.io/eclipse-marketplace/last-update/notepad4e.svg" /></a>
         
-<a href="Licenca" alt="">
+<a href="" alt="">
         <img src="https://img.shields.io/dub/l/vibe-d.svg" /></a>
         
-<a href="Versão" alt="">
+<a href="" alt="">
         <img src="https://img.shields.io/badge/Version-v1-green.svg" /></a>
         
-<a href="Python" alt="">
+<a href="" alt="">
        <img src="https://img.shields.io/pypi/pyversions/Django.svg" /></a>
 
   
-<a href="Size" alt="">
+<a href="" alt="">
        <img src="https://img.shields.io/github/repo-size/badges/shields.svg" /></a>
 
 </p>
